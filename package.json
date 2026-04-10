@@ -2,17 +2,22 @@
   "name": "diecast-platform-demo",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start",
     "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
     "db:migrate": "drizzle-kit migrate --config=drizzle.config.ts",
     "db:push": "drizzle-kit push --config=drizzle.config.ts",
     "db:seed": "tsx src/db/seeds/index.ts",
     "import:catalog": "tsx src/scripts/import-catalog.ts",
-    "role:grant-admin": "tsx src/scripts/grant-admin.ts"
+    "role:grant-admin": "tsx src/scripts/grant-admin.ts",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.19.0",
     "@supabase/ssr": "^0.10.0",
     "@supabase/supabase-js": "^2.101.0",
     "clsx": "^2.1.1",
@@ -33,6 +38,7 @@
     "drizzle-kit": "^0.31.10",
     "tailwindcss": "^4.2.2",
     "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.81.1"
   }
 }
