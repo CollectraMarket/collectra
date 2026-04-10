@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --panel: rgba(255,255,255,0.05);
+  --panel-strong: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.10);
+  --muted: rgba(255,255,255,0.68);
+  --muted-2: rgba(255,255,255,0.45);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top, rgba(31,79,102,0.28), transparent 40%),
+    linear-gradient(180deg, #0b1017 0%, #090c11 100%);
+  color: white;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 md:px-6;
+}
+
+.panel {
+  @apply rounded-3xl border p-5 md:p-6;
+  background: var(--panel);
+  border-color: var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.panel-strong {
+  @apply rounded-3xl border p-5 md:p-6;
+  background: var(--panel-strong);
+  border-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.kicker {
+  @apply text-xs uppercase tracking-[0.24em];
+  color: var(--muted-2);
+}
+
+.section-title {
+  @apply text-2xl font-semibold tracking-tight md:text-3xl;
+}
+
+.field {
+  @apply h-12 w-full rounded-2xl border px-4 outline-none;
+  border-color: var(--border);
+  background: rgba(255,255,255,0.04);
+}
+
+.field-textarea {
+  @apply w-full rounded-2xl border px-4 py-3 outline-none;
+  border-color: var(--border);
+  background: rgba(255,255,255,0.04);
+  min-height: 144px;
+}
+
+.badge-chip {
+  @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em];
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+}
+
+.btn-primary {
+  @apply inline-flex h-12 items-center justify-center rounded-2xl px-5 font-semibold transition;
+  background: linear-gradient(180deg, #ff824f 0%, #ff6b35 100%);
+  color: white;
+  box-shadow: 0 10px 24px rgba(255,107,53,0.22);
+}
+
+.btn-secondary {
+  @apply inline-flex h-12 items-center justify-center rounded-2xl border px-5 font-semibold transition;
+  border-color: var(--border);
+  background: rgba(255,255,255,0.04);
+}
+
+.subtle-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
